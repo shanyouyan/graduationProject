@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="UTF-8">
+<title>用户注册</title>
+
+<link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery.js"></script>
+  <script>
+    <!--验证用户名-->
+    function checkName() {
+      var userName = $("#userName").val();
+      //长度为5-10的单词
+      var reg = /^\w{5,10}$/;
+      var check = reg.test(userName);
+      if(check){
+        $("#userName").css("border","");
+        return true;
+      }else{
+        $("#userName").css("border","1px solid red");
+        $(".regist-tips").html("请输入5-10个长度的英文字符!");
+        $("#userName").focus();
+        return false;
+      }
+    }
+    <!--验证密码-->
+    function checkPass() {
+      var password = $("#registPass").val();
+      //长度为5-10个单词
+      var reg = /^\w{5,10}$/;
+      var check = reg.test(password);
+      if(check){
+        //符合规则
+        $("#registPass").css("border","");
+        return true;
+      }else{
+        $("#registPass").css("border","1px solid red");
+        $(".regist-tips").html("请按照规则填写密码!");
+        $("#registPass").focus();
+        return false;
+      }
+    }
+    function checkRePass() {
+      var registPass = $("#registPass").val();
+      var rePassword = $("#rePassword").val();
+      var reg = /^\w{5,10}$/;
+      var check = reg.test(rePassword);
+      if(check && registPass == rePassword){
+        //符合规则
+        $("#rePassword").css("border","");
+        return true;
+      }else if(registPass != rePassword){
+        $("#rePassword").css("border","1px solid red");
+        $(".regist-tips").html("两次密码不一致，请检查!");
+        $("#rePassword").focus();
+        return false;
+      }else{
+        $("#rePassword").css("border","1px solid red");
+        $(".regist-tips").html("请按照规则填写密码!");
+        $("#rePassword").focus();
+        return false;
+      }
+    }
+    //验证手机号
+    function checkPhoneNum() {
+      var phoneNum = $("#phoneNum").val();
+      var reg = /^1[345678]\d{9}$/;
+      var check = reg.test(phoneNum);
+      if (check){
+        //符合规则
+        $("#phoneNum").css("border","");
+        return true;
+      }else if (!checkName() && !checkPass() && !checkRePass()){
+        $(".regist-tips").html("请正确填写内容!");
+        $("#phoneNum").css("border","1px solid red");
+        return false;
+      }else{
+        $("#phoneNum").css("border","1px solid red");
+        $(".regist-tips").html("请输入正确的手机号码!");
+        $("#phoneNum").focus();
+        return false;
+      }
+    }
+    <!--注册验证-->
+    function checkRigester() {
+      var userName = document.getElementById("userName").value;
+      var registPass = document.getElementById("registPass").value;
+      var rePassword = document.getElementById("rePassword").value;
+      var registPhone = document.getElementById("phoneNum").value;
+      var registTips = document.getElementsByClassName("regist-tips")[0];
+      if(userName == ""){
+        registTips.innerHTML = "用户名不能为空";
+        return false;
+      }else if(registPass == "" || rePassword == ""){
+        registTips.innerHTML = "密码不能为空";
+        return false;
+      }else if(registPass != rePassword){
+        registTips.innerHTML = "两次密码不一致，请检查!";
+        return false;
+      }else if(registPhone == ""){
+        registTips.innerHTML = "手机号不能为空";
+        return  false;
+      }else{
+        return  true;
+      }
+    }
+    $(function () {
+      <!--注册验证-->
+      $("#register").click(function () {
+        //发送请求之前校验
+        if (checkRigester() && checkName() && checkPass() && checkRePass() && checkPhoneNum()) {
+          $(".regist-tips").html("");
+          $.post("register",$("#registerForm").serialize(),function (data) {
+            if (data.flag){
+              location.href = "index.html";
+              confirm("注册成功，去登录?");
+            }else{
+              $(".regist-tips").html(data.msg);
+            }
+          });
+        }
+        return false;
+      });
+    });
+  </script>
+
+</head>
+<body>
+
+<form method="post" action="javascript: void(0);" id="registerForm" class="login-form" autocomplete="off" role="main" onsubmit="return checkRigester()">
+  <h1 class="a11y-hidden">注册表单</h1>
+  <div>
+    <label class="label-email">
+      <input type="text" class="text" id="userName" name="userName" placeholder="请输入5-10位英文字符" tabindex="1" />
+      <span class="required">用户名：</span>
+    </label>
+  </div>
+  <input type="checkbox" name="show-password" class="show-password a11y-hidden" id="show-password" tabindex="3" />
+  <div>
+    <label class="label-password">
+      <input type="password" class="text" id="registPass" name="registPass" placeholder="请输入5-10位密码！" tabindex="2"/>
+      <span class="required">密码：</span>
+    </label>
+  </div>
+  <div>
+    <label class="label-password">
+      <input type="password" class="text"  id="rePassword" name="rePassword" placeholder="请确认密码！" tabindex="2" />
+      <span class="required">确认密码：</span>
+    </label>
+  </div>
+  <div>
+    <label class="label-password">
+      <input type="text" class="text" id="phoneNum" name="phoneNum" placeholder="请输入11位正确的手机号" tabindex="2" />
+      <span class="required">手机号码：</span>
+    </label>
+    <span class="regist-tips" style="color: red;display: block;font-size: 14px;"></span>
+  </div>
+  <input type="submit" id="register" value="注册" />
+  <div class="email">
+    <a href="#">已有账号？去登录</a>
+  </div>
+  <figure aria-hidden="true">
+    <div class="person-body"></div>
+    <div class="neck skin"></div>
+    <div class="head skin">
+      <div class="eyes"></div>
+      <div class="mouth"></div>
+    </div>
+    <div class="hair"></div>
+    <div class="ears"></div>
+    <div class="shirt-1"></div>
+    <div class="shirt-2"></div>
+  </figure>
+</form>
+
+</body>
+</html>

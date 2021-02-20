@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <title>下载</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+<!--头部导航栏-->
+
+<div class="global-nav it-header">
+    <nav class="container nav">
+        <div class="row">
+            <div class="col-sm-7 col-md-8 col-lg-8">
+                <div class="shanIT-logo hidden-xs">
+                    <a href=""><img src="images/logo.png" title="IT技术论坛" alt=""></a>
+                </div>
+                <div class="shanIT-logo-xs visible-xs hidden-sm">
+                    <a href=""><img src="images/logo.png"></a>
+                </div>
+                <div>
+                    <ul class="menu list-inline pull-left hidden-xs hidden-sm">
+                        <li class="menu-item"><a href="index.html" class="firPage">首页</a></li>
+                        <li class="menu-item"><a href="question.html">问答</a></li>
+                        <li class="menu-item"><a href="#">专栏</a></li>
+                        <li class="menu-item"><a href="javascript:;">下载</a></li>
+                        <li class="menu-item"><a href="#">论坛</a></li>
+                    </ul>
+                    <form class="header-search hidden-xs pull-right">
+                        <input type="text" placeholder="搜索问题或关键字" class="form-control">
+                        <button class="btn btn-link">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </form>
+                    <form class="header-search-xs visible-xs">
+                        <input type="text" placeholder="搜索问题或关键字" class="form-control">
+                        <button class="btn btn-link">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-5 col-md-4 col-lg-4 login-right">
+                <ul class="login list-inline">
+                    <li class="writeMess hidden-xs">
+                        <a href=""><img src="images/writting.png">写论坛</a>
+                        <a href=""><img src="images/message.png">消息</a>
+                    </li>
+                    <li class="hidden-xs hidden-sm">
+                        <a  href="" class="login-item" data-toggle="modal" data-target="#loginModal">登录</a>
+                        <a href="" class="login-item" data-toggle="modal" data-target="#registerModal">注册</a>
+                    </li>
+                    <li class="user visible-xs">
+                        <a href=""><img src="images/user.png"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<!--登录模态框-->
+<div class="modal in It-modal" id="loginModal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title">登录</h4>
+            </div>
+            <div class="modal-body">
+                <div class="Itmodal-content">
+                    <div class="row login-bg login-modal">
+                        <div class="col-md-12 login-wrap">
+                            <form method="post" role="form" class="mt15">
+                                <div class="form-group hidden">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="userName" class="control-label">手机号 或 Email</label>
+                                    <input type="text" class="form-control" id="userName" required placeholder="11位手机号 或 Email">
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">密码:</label>
+                                    <span class="pull-right">
+                                        <a href="">忘记密码?</a>
+                                    </span>
+                                    <input type="text" class="form-control" name="password" required placeholder="请输入密码">
+                                </div>
+                                <div class="form-group">
+                                    <a href="" class="phoneLogin">手机验证码</a>
+                                </div>
+                                <div class="form-group clearfix">
+                                    <button type="submit" class="btn-block btn btn-info pull-right pl20 pr20">登录</button>
+                                </div>
+                            </form>
+                            <div class="text-muted text-center more-login-area">
+                                <span class="more-login-word">更多登录方式</span>
+                            </div>
+                            <div class="login-icon mb15 text-center">
+                                <a href=""><span class="qq-icon"></span></a>
+                                <a href=""><span class="weixin-icon"></span></a>
+                                <a href=""><span class="weibo-icon"></span></a>
+                                <a href=""><span class="taobao-icon"></span></a>
+                                <a href=""><span class="aliPay-icon"></span></a>
+                            </div>
+                            <div class="form-group clearfix">
+                                <a class="btn-block btn btn-default pull-right pl20 pr20">注册新账号</a>
+                            </div>
+                            <p class="text-muted text-center mb15">继续即表示你同意<a href="#">《服务条款》</a>和<a href="#">《隐私政策》</a> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer hidden"></div>
+        </div>
+    </div>
+
+</div>
+
+<!--注册模态框-->
+<div class="modal in It-modal" id="registerModal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Close</span>
+                </button>
+                <h4 class="modal-title">注册</h4>
+            </div>
+            <div class="modal-body">
+                <div class="Itmodal-content">
+                    <div class="row login-bg login-modal">
+                        <div class="col-md-12 login-wrap">
+                            <form method="post" role="form" class="mt15">
+                                <div class="form-group hidden">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label for="userName" class="control-label">用户昵称:</label>
+                                    <input type="text" class="form-control" id="nickName" required placeholder="请输入合理的昵称">
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">密码:</label>
+                                    <input type="text" class="form-control" name="pwd" required placeholder="请输入密码">
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">确认密码:</label>
+                                    <input type="text" class="form-control" name="agaPwd" required placeholder="请再次输入密码">
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">手机号或Email:</label>
+                                    <input type="text" class="form-control" name="agaPwd" required placeholder="请输入你的手机号或Email">
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" checked>
+                                    <span class="text-muted text-center mb15">同意<a href="">《注册条款》</a>和<a href="">《隐私权相关政策》</a> </span>
+                                </div>
+                                <div class="form-group clearfix">
+                                    <button type="submit" class="btn-block btn btn-info pull-right pl20 pr20">注册</button>
+                                </div>
+                            </form>
+                            <div class="text-muted text-center more-login-area">
+                                <span class="more-login-word">更多注册方式</span>
+                            </div>
+                            <div class="login-icon mb15 text-center">
+                                <a href=""><span class="qq-icon"></span></a>
+                                <a href=""><span class="weixin-icon"></span></a>
+                                <a href=""><span class="weibo-icon"></span></a>
+                                <a href=""><span class="taobao-icon"></span></a>
+                                <a href=""><span class="aliPay-icon"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer hidden"></div>
+        </div>
+    </div>
+
+</div>
+
+<!--下载区域-->
+<div class="download">
+    <div class="container mt15">
+        <div class="row">
+            <div class="col-md-9 left">
+                <div class="down-head">
+                    <div class="reso-type">
+                        <ul>
+                            <li style="padding-left: 0;"><span>资源类型:</span></li>
+                            <li><a href="#">全部</a></li>
+                            <li><a href="#">文档类</a></li>
+                            <li><a href="#">工具类</a></li>
+                            <li><a href="#">代码类</a></li>
+                            <li><a href="#">其他</a></li>
+                        </ul>
+                    </div>
+                    <div class="key-sear">
+                        <form class="key-search hidden-xs form-inline">
+                            <input type="text" placeholder="搜索问题或关键字" class="form-control">
+                            <button class="btn btn-primary">搜索</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="down-list-wrap">
+                    <div class="down-list">
+                        <dl class="list-item clearfix">
+                            <dt>
+                                <a target="_blank" href="">
+                                    <img src="images/pdf.svg" alt="img">
+                                </a>
+                            </dt>
+                            <dd>
+                                <a target="_blank" href="" class="item-title">
+                                    有机太阳能电池中界面结构与器件性能之间内在联系的研究</a>
+                                <p class="down-desc">有机太阳能电池中界面结构与器件性能之间内在联系的研究，鞠焕鑫，潘宵，深入了解金属/有机半导体间的界 面性质以及精确调控界面结构是开发高性能有机太阳能电池的关键.</p>
+                                <div class="down_detail clearfix" style="position: relative;">
+                                    <label><span>资源大小：</span><em class="upl_name">1.18MB</em></label>
+                                    <label><span>上传时间：</span><em class="upl_time">2020-02-21</em></label>
+                                    <label><span>上传者：</span><em class="upl_name">weixin_38556394</em></label>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl class="list-item clearfix">
+                            <dt>
+                                <a target="_blank" href="">
+                                    <img src="images/pdf.svg" alt="img">
+                                </a>
+                            </dt>
+                            <dd>
+                                <a target="_blank" href="" class="item-title">
+                                    有机太阳能电池中界面结构与器件性能之间内在联系的研究</a>
+                                <p class="down-desc">有机太阳能电池中界面结构与器件性能之间内在联系的研究，鞠焕鑫，潘宵，深入了解金属/有机半导体间的界 面性质以及精确调控界面结构是开发高性能有机太阳能电池的关键.</p>
+                                <div class="down_detail clearfix" style="position: relative;">
+                                    <label><span>资源大小：</span><em class="upl_name">1.18MB</em></label>
+                                    <label><span>上传时间：</span><em class="upl_time">2020-02-21</em></label>
+                                    <label><span>上传者：</span><em class="upl_name">weixin_38556394</em></label>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl class="list-item clearfix">
+                            <dt>
+                                <a target="_blank" href="">
+                                    <img src="images/pdf.svg" alt="img">
+                                </a>
+                            </dt>
+                            <dd>
+                                <a target="_blank" href="" class="item-title">
+                                    有机太阳能电池中界面结构与器件性能之间内在联系的研究</a>
+                                <p class="down-desc">有机太阳能电池中界面结构与器件性能之间内在联系的研究，鞠焕鑫，潘宵，深入了解金属/有机半导体间的界 面性质以及精确调控界面结构是开发高性能有机太阳能电池的关键.</p>
+                                <div class="down_detail clearfix" style="position: relative;">
+                                    <label><span>资源大小：</span><em class="upl_name">1.18MB</em></label>
+                                    <label><span>上传时间：</span><em class="upl_time">2020-02-21</em></label>
+                                    <label><span>上传者：</span><em class="upl_name">weixin_38556394</em></label>
+                                </div>
+                            </dd>
+                        </dl>
+                        <dl class="list-item clearfix">
+                            <dt>
+                                <a target="_blank" href="">
+                                    <img src="images/pdf.svg" alt="img">
+                                </a>
+                            </dt>
+                            <dd>
+                                <a target="_blank" href="" class="item-title">
+                                    有机太阳能电池中界面结构与器件性能之间内在联系的研究</a>
+                                <p class="down-desc">有机太阳能电池中界面结构与器件性能之间内在联系的研究，鞠焕鑫，潘宵，深入了解金属/有机半导体间的界 面性质以及精确调控界面结构是开发高性能有机太阳能电池的关键.</p>
+                                <div class="down_detail clearfix" style="position: relative;">
+                                    <label><span>资源大小：</span><em class="upl_name">1.18MB</em></label>
+                                    <label><span>上传时间：</span><em class="upl_time">2020-02-21</em></label>
+                                    <label><span>上传者：</span><em class="upl_name">weixin_38556394</em></label>
+                                </div>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 right">
+                <div class="personal-mes">
+                    <dl class="pers-wrap" style="margin-bottom: 0;">
+                        <dt class="pers-phot">
+                            <a href=""><img src="images/pers-phot.gif"></a>
+                        </dt>
+                        <dd>
+                            <a href=""  class="pers-name">海来阿木</a>
+                            <div>
+                                <span class="level">等级</span>
+                                <span class="level-num">1</span>
+                            </div>
+                            <div>
+                               <p class="dl_score" style="margin-top: 4px;">
+                                   <b>下载积分：</b>
+                                   <b>0</b>
+                               </p>
+                            </div>
+                        </dd>
+                    </dl>
+                    <div class="pers_tips">
+                        <div class="btn_group ">
+                            <a  href="" class="upload">上传资源</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="rec-tag mt30 mb15">
+                    <h4 class="recommend mt15">热门资源标签</h4>
+                    <ul>
+                        <li><a href="">JDK1.7 64位</a></li>
+                        <li><a href="">zhangyue DirectX 0xc000007b</a></li>
+                        <li><a href="">PLSQL Developer  解压版 64位可用</a></li>
+                        <li><a href="">apktool 反编译 资源 apk</a></li>
+                        <li><a href="">google chrome 浏览器</a></li>
+                        <li><a href="">Navicat 破解 注册机</a></li>
+                        <li><a href="">java API1.7 中文版 chm</a></li>
+                    </ul>
+                </div>
+                <div class="advertise mt30">
+                    <img src="images/Adver.jpg">
+                    <span>广告</span>
+                    <div><a href="javascript:;">关闭</a></div>
+                </div>
+                <div class="QRcode">
+                    <div class="QRimg">
+                        <ul class="list-inline">
+                            <li>
+                                <img src="images/QRcode.png">
+                                <p>论坛欢迎页</p>
+                            </li>
+                            <li>
+                                <img src="images/weChat.png">
+                                <p>论坛公众号</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="information list-inline">
+                        <li>
+                            <img src="images/inforQQ.png">
+                            <span>QQ客服</span>
+                        </li>
+                        <li>
+                            <img src="images/email.png">
+                            <span>shanIT@qq.com</span>
+                        </li>
+                        <li>
+                            <img src="images/inforLun.png">
+                            <span>客服论坛</span>
+                        </li>
+                        <li>
+                            <img src="images/inforPhone.png">
+                            <span>027-123-456</span>
+                        </li>
+                    </ul>
+                    <p class="workTime">工作时间:8:30 - 22:10</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--底部区域-->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <p>
+                <a href="">论坛简介</a><i>|</i>
+                <a href="">论坛公告</a><i>|</i>
+                <a href="">招贤纳士</a><i>|</i>
+                <a href="">联系我们</a><i>|</i>
+                <a href="">客服热线 : 400-675-1234</a>
+            </p>
+            <p>Copyright&nbsp;©&nbsp;2006 - 2014 版权所有&nbsp;&nbsp;&nbsp;京ICP备09037834号&nbsp;&nbsp;&nbsp;京ICP证B1034-8373号 &nbsp;&nbsp;&nbsp;北京市公安局XX分局备案编号：123456789123
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

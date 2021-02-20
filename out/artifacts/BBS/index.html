@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>shanIT技术论坛</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/include.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+<body>
+
+<!--头部导航栏-->
+<div id="header"></div>
+
+<!--内容区域-->
+<div class="wrapper">
+    <div class="container mt30">
+        <div class="row">
+            <div class="col-md-2 left">
+                <div class="it-sort">
+                    <a class="it-sort-item" href="" style="background-color: #00b3ee;color: #fff;">
+                        <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                        <span class="name">近期热门</span>
+                    </a>
+                    <a class="it-sort-item" href="">
+                        <i class="fa fa-globe" aria-hidden="true"></i>
+                        <span class="name">最新内容</span>
+                    </a>
+                </div>
+                <div class="tech-square hidden-xs hidden-sm mb15">
+                    <h5 class="tech-square-title mt0 mb15">技术社区</h5>
+                    <a href="" class="tech-square-item">
+                        <span class="tech-square-item-icon">
+                            <img src="images/ai.png">
+                        </span>
+                        <span>人工智能</span>
+                    </a>
+                    <a href="" class="tech-square-item">
+                        <span class="tech-square-item-icon">
+                            <img src="images/chengyu.png">
+                        </span>
+                        <span>程序员</span>
+                    </a>
+                    <a href="" class="tech-square-item">
+                        <span class="tech-square-item-icon">
+                            <img src="images/cloud.png">
+                        </span>
+                        <span>云计算/大数据</span>
+                    </a>
+                </div>
+
+                <div class="tech-square hidden-xs hidden-sm mb15">
+                    <h5 class="tech-square-title mt0 mb15">技术专区</h5>
+                    <a href="" class="tech-square-item">
+                        <span class="tech-square-item-icon">
+                            <img src="images/js.png">
+                        </span>
+                        <span>前端</span>
+                    </a>
+                    <a href="" class="tech-square-item">
+                        <span class="tech-square-item-icon">
+                            <img src="images/houduan.png">
+                        </span>
+                        <span>后端</span>
+                    </a>
+                    <a href="" class="tech-square-item">
+                        <span class="tech-square-item-icon">
+                            <img src="images/database.png">
+                        </span>
+                        <span>数据库</span>
+                    </a>
+                    <a href="" class="tech-square-item">
+                        <span class="tech-square-item-icon">
+                            <img src="images/smallAppl.png">
+                        </span>
+                        <span>小程序</span>
+                    </a>
+                    <a href="" class="tech-square-item">
+                        <span class="tech-square-item-icon">
+                            <img src="images/Python.png">
+                        </span>
+                        <span>Python</span>
+                    </a>
+                    <a href="" class="tech-square-item">
+                        <span class="tech-square-item-icon">
+                            <img src="images/Android.png">
+                        </span>
+                        <span>Android</span>
+                    </a>
+                    <a href="" class="tech-square-item">
+                        <span class="tech-square-item-icon">
+                            <img src="images/Apple.png">
+                        </span>
+                        <span>IOS</span>
+                    </a>
+                    <a href="" class="tech-square-item">
+                        <span class="tech-square-item-icon">
+                            <img src="images/phpIcon.png">
+                        </span>
+                        <span>PHP</span>
+                    </a>
+                    <a href="" class="tech-square-item">
+                        <span class="tech-square-item-icon">
+                            <img src="images/phone.png">
+                        </span>
+                        <span>移动开发</span>
+                    </a>
+                    <a href="" class="tech-square-item">
+                        <span class="tech-square-item-icon">
+                            <img src="images/game.png">
+                        </span>
+                        <span>游戏开发</span>
+                    </a>
+                    <a href="" class="tech-square-item">
+                        <span class="tech-square-item-icon">
+                            <img src="images/yun.png">
+                        </span>
+                        <span>运维</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-7 middle">
+                <!-- 轮播图 -->
+                <div id="carousel-pic" class="carousel slide hidden-xs hidden-sm" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-pic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-pic" data-slide-to="1"></li>
+                        <li data-target="#carousel-pic" data-slide-to="2"></li>
+                    </ol>
+
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="images/java.png" alt="java">
+                            <div class="carousel-caption"></div>
+                        </div>
+                        <div class="item">
+                            <img src="images/php.jpg" alt="...">
+                            <div class="carousel-caption"></div>
+                        </div>
+                        <div class="item">
+                            <img src="images/MySQL.jpg" alt="...">
+                            <div class="carousel-caption"></div>
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#carousel-pic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-pic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
+                <!--文本-->
+                <div class="connect hidden-xs hidden-sm">
+                    <h5>近期热门</h5>
+                </div>
+                <div class="news-list">
+                    <div class="news-list-item clearfix mt15">
+                        <div class="news-item-info">
+                            <a href="" class="">
+                                <div class="item-title">
+                                    <h4>一看就懂之webpack高级配置与优化</h4>
+                                </div>
+                                <div class="item-article">
+                                    <p>所谓打包多页面，就是同时打包出多个html页面，打包多页面也是使用html-webpack-plugin，只不过，在引入插件的时候是创建多个插件对象，因为一个html-webpack-plugin插件对象只能打包出一个html页面。如:</p>
+                                </div>
+                                <div class="news-interact">
+                                    <span class="votes-operation pr20 fr">
+                                        <span class="fabulous">
+                                            <i class="fa fa-thumbs-up"></i>
+                                        </span>
+                                        <span class="fabulous-num">5658</span>
+                                        <span class="fabulous">
+                                            <i class="fa fa-share-alt"></i>
+                                        </span>
+                                        <span class="fabulous-num">85</span>
+                                        <span class="fabulous">
+                                            <i class="fa fa-external-link"></i>
+                                        </span>
+                                        <span class="fabulous-num">632</span>
+                                    </span>
+                                    <span class="author">
+                                        <a href="">山有岩</a>
+                                        <span class="fabulous-dot">·</span>
+                                        9小时前
+                                    </span>
+                                </div>
+                                <div class="line"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="news-list-item clearfix mt15">
+                        <div class="news-item-info">
+                            <a href="" class="">
+                                <div class="item-title">
+                                    <h4>毕业3年，3份工作，3个国家，翻译运营市场到程序媛，我都经历了些什么</h4>
+                                </div>
+                                <div class="item-article">
+                                    <p>目前在美国某二三线城市当地一大厂工作，初级程序媛，刚转码7个月，主要写前端，刚被拖过来临时写测试。事实上Segmentfault见证了我转码的整个阶段。一开始是用segmentfault做笔记，现在改用gitbook了。但是会经常上来刷文章.</p>
+                                </div>
+                                <div class="news-interact">
+                                    <span class="votes-operation pr20 fr">
+                                        <span class="fabulous">
+                                            <i class="fa fa-thumbs-up"></i>
+                                        </span>
+                                        <span class="fabulous-num">5658</span>
+                                        <span class="fabulous">
+                                            <i class="fa fa-share-alt"></i>
+                                        </span>
+                                        <span class="fabulous-num">85</span>
+                                        <span class="fabulous">
+                                            <i class="fa fa-external-link"></i>
+                                        </span>
+                                        <span class="fabulous-num">632</span>
+                                    </span>
+                                    <span class="author">
+                                        <a href="">Jake</a>
+                                        <span class="fabulous-dot">·</span>
+                                        2小时前
+                                    </span>
+                                </div>
+                                <div class="line"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="news-list-item clearfix mt15">
+                        <div class="news-item-info">
+                            <a href="" class="">
+                                <div class="item-title">
+                                    <h4>前端理解依赖注入(控制反转)</h4>
+                                </div>
+                                <div class="item-article">
+                                    <p>前端的技术的极速发展，对前端同学来说也是一个不小的挑战，有各种各样的东西需要学，在开发过程中经常会被后端同学嘲讽，对于前端来讲根本就不存在类的概念，很多时候需要把大量的业务代码堆积在页面或者组件中，使组件和页面变得特别的臃肿，一旦业务逻辑复杂的情况下，及时组件化做的很好，仍然避免不了难以维护。</p>
+                                </div>
+                                <div class="news-interact">
+                                    <span class="votes-operation pr20 fr">
+                                        <span class="fabulous">
+                                            <i class="fa fa-thumbs-up"></i>
+                                        </span>
+                                        <span class="fabulous-num">5658</span>
+                                        <span class="fabulous">
+                                            <i class="fa fa-share-alt"></i>
+                                        </span>
+                                        <span class="fabulous-num">85</span>
+                                        <span class="fabulous">
+                                            <i class="fa fa-external-link"></i>
+                                        </span>
+                                        <span class="fabulous-num">632</span>
+                                    </span>
+                                    <span class="author">
+                                        <a href="">welly</a>
+                                        <span class="fabulous-dot">·</span>
+                                        8分钟前
+                                    </span>
+                                </div>
+                                <div class="line"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="news-list-item clearfix mt15">
+                        <div class="news-item-info">
+                            <a href="" class="">
+                                <div class="item-title">
+                                    <h4>面向对象之七大基本原则（javaScript）</h4>
+                                </div>
+                                <div class="item-article">
+                                    <p>面向对象编程有自己的特性与原则，如果对于面向对象有一些了解的话，面向对象三大特征，封装、继承、多态，如果对面向对这三个概念不太了解，请参考面向对象之三个基本特征（javaScript）</p>
+                                </div>
+                                <div class="news-interact">
+                                    <span class="votes-operation pr20 fr">
+                                        <span class="fabulous">
+                                            <i class="fa fa-thumbs-up"></i>
+                                        </span>
+                                        <span class="fabulous-num">5658</span>
+                                        <span class="fabulous">
+                                            <i class="fa fa-share-alt"></i>
+                                        </span>
+                                        <span class="fabulous-num">85</span>
+                                        <span class="fabulous">
+                                            <i class="fa fa-external-link"></i>
+                                        </span>
+                                        <span class="fabulous-num">632</span>
+                                    </span>
+                                    <span class="author">
+                                        <a href="">山有岩</a>
+                                        <span class="fabulous-dot">·</span>
+                                        9小时前
+                                    </span>
+                                </div>
+                                <div class="line"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 right hidden-xs hidden-sm">
+                <div>
+                    <h4 class="recommend mt15">今日推荐</h4>
+                    <div class="recommend-item">
+                        <ul class="item-list">
+                            <li>
+                                <div class="imgBox">
+                                    <a href="">
+                                        <img src="images/rightSmall01.png">
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h3 class="item-name"><a href="">风云起的芯片时代，英特尔的封装之路</a></h3>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="recommend-item">
+                        <ul class="item-list">
+                            <li>
+                                <div class="imgBox">
+                                    <a href="">
+                                        <img src="images/rightSmall02.jpg">
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h3 class="item-name"><a href="">华为方舟编译器开源！前华为人重磅解读！</a></h3>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="recommend-item">
+                        <ul class="item-list">
+                            <li>
+                                <div class="imgBox">
+                                    <a href="">
+                                        <img src="images/rightSmall03.jpg">
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h3 class="item-name"><a href="">百度云技术专区,云技术开发者大会</a></h3>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="recommend-item">
+                        <ul class="item-list">
+                            <li>
+                                <div class="imgBox">
+                                    <a href="">
+                                        <img src="images/rightSmall04.jpg">
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h3 class="item-name"><a href="">上云，你准备好了吗?云技术开发者大会</a></h3>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="recommend-item">
+                        <ul class="item-list">
+                            <li>
+                                <div class="imgBox">
+                                    <a href="">
+                                        <img src="images/rightSmall02.png">
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h3 class="item-name"><a href="">如何用 JavaScript+Canvas 开发一款超级烧脑小游戏？</a></h3>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="advertise mt30">
+                    <img src="images/Adver.jpg">
+                    <span>广告</span>
+                    <div><a href="javascript:;">关闭</a></div>
+                </div>
+                <div class="QRcode">
+                    <div class="QRimg">
+                        <ul class="list-inline">
+                            <li>
+                                <img src="images/QRcode.png">
+                                <p>论坛欢迎页</p>
+                            </li>
+                            <li>
+                                <img src="images/weChat.png">
+                                <p>论坛公众号</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="information list-inline">
+                        <li>
+                            <img src="images/inforQQ.png">
+                            <span>QQ客服</span>
+                        </li>
+                        <li>
+                            <img src="images/email.png">
+                            <span>shanIT@qq.com</span>
+                        </li>
+                        <li>
+                            <img src="images/inforLun.png">
+                            <span>客服论坛</span>
+                        </li>
+                        <li>
+                            <img src="images/inforPhone.png">
+                            <span>027-123-456</span>
+                        </li>
+                    </ul>
+                    <p class="workTime">工作时间:8:30 - 22:10</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--底部版权区-->
+<div id="footer"></div>
+
+<!--网页右侧悬浮-->
+<div class="side-bar">
+    <a href="#" class="icon-qq">QQ在线咨询</a>
+    <a href="" class="icon-chat">微信<div class="chat-tips"><i></i><img src="./images/code.jpg" style="width:138px;height:138px;"  alt="微信订阅号"></div></a>
+    <a target="_blank" href="" class="icon-blog">微博</a>
+    <a href="mailto:admin@admin.com" class="icon-mail">mail</a>
+</div>
+
+</body>
+</html>

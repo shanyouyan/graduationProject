@@ -1,0 +1,17 @@
+/*Document*/
+
+body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,table,td,img,div,dl,dt,dd,input{margin:0;padding:0;}
+body{font-size: 14px;color:#333;font-family: 微软雅黑;}
+img{border:none;}
+li{list-style: none;}
+input,textarea,select{outline: none;background:none;}
+textarea{resize: none;}
+a{text-decoration: none;color:#ccc;}
+
+/*清除浮动*/
+.clearfix{zoom:1;}
+.clearfix:after{content:""; display:block; clear: both;}
+
+.fl{float: left;}
+.fr{float: right;}
+

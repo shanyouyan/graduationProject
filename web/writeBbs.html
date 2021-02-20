@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>写论坛</title>
+    <link rel="stylesheet" href="css/select.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/include.js"></script>
+    <script src="js/select2.js"></script>
+    <style type="text/css">
+        body{
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #666;
+            margin: 0;
+            background-color: #F0F0F0;
+        }
+        .m{
+            width: 800px;
+            margin-top: 20px;
+        }
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    </style>
+    <style type="text/css">
+        *{margin:0; padding:0;}
+        body,input{font-size:14px; line-height:24px; color:#333; font-family:Microsoft yahei, Song, Arial, Helvetica, Tahoma, Geneva;}
+        #content #post,#comment p{zoom:1;}
+        #content #post:after,#comment p:after{display:block; height:0; clear:both; visibility:hidden; overflow:hidden; content:'.';}
+        .transition{-webkit-transition:all 0.5s linear; -moz-transition:all 0.5s linear; -o-transition:all 0.5s linear; -ms-transition:all 0.5s linear; transition:all 0.5s linear;}
+        #content{ width:1000px; overflow:hidden;}
+        #content #post{margin-bottom:15px; padding-bottom:15px; border-bottom:1px #d4d4d4 dashed;
+            height: 556px;
+        }
+        #content #post textarea{display:block; margin-bottom:10px; padding:5px; width:1000px; height:390px; border:1px #d1d1d1 solid; border-radius:5px; resize:none; outline:none;}
+        #content #post textarea:hover{border:1px #9bdf70 solid; background:#f0fbeb;}
+        #content #post #postBt,#content #post #clearBt{margin-left:5px; padding:3px; float:right;}
+        #comment{overflow:hidden;}
+        #comment p{margin-bottom:10px; padding:10px; border-radius:5px;}
+        #comment p:nth-child(odd){border:1px solid #e3e197; background:#ffd;}
+        #comment p:nth-child(even){border:1px solid #adcd3c; background:#f2fddb;}
+        /*#comment p span{display:inline; float:left;}*/
+        #comment p .right{text-align:right;}
+        #comment p .msg{width:738px;}
+        #comment p .datetime{width:200px; color:#999; text-align:right;}
+    </style>
+</head>
+<body>
+
+<!--头部导航栏-->
+<div id="header"></div>
+
+<!--内容区-->
+<div class="writeWeb">
+    <div class="container mt30">
+        <h3 style="font-weight: bold">写论坛</h3>
+        <div class="m">
+            <span style="display:block;font-size: 16px;font-weight: bold;">请选择文章或论坛类型!</span>
+            <div class=" selectPickerWrapper showYear" data-checks="" data-model="Year" >
+                <select class="hidden"></select>
+            </div>
+            <div class="selectPickerWrapper showCity" data-model="City">
+                <select class="hidden">
+                    <option value="1">JavaScript</option>
+                    <option value="2">HTML</option>
+                    <option value="3">CSS3</option>
+                    <option value="4">HTML5 + CSS3</option>
+                    <option value="5">C/C++/C#</option>
+                    <option value="6">Python</option>
+                </select>
+            </div>
+        </div>
+        <div id="content">
+            <div id="post">
+                <div style="background:#00b3ee;height:40px;line-height: 40px;">
+                    昵称：<input type="submit" id="shangtian" name="Submit3" style="border:none; background-color:#3EADC5; color:white;" value="默认用户点击更改" onClick="prom()" />
+                    <input type="text" id="ritian" style="border:none; background-color:#00b3ee; color:white;"   onclick="prom()">
+                    <!--disabled="disabled"-->
+                </div>
+                <div>
+                    <textarea class="transition"></textarea>
+                </div>
+                <input id="postBt" type="button" style="border:none; background-color:#3EADC5; color:white;border-radius:5px; width:80px; height:30px;" value="发表论坛">
+                <input id="clearBt" type="button" style="border:none; background-color:#3EADC5; color:white;border-radius:5px; width:80px; height:30px;" value="清空">
+            </div>
+            <div id="comment"></div>
+        </div>
+    </div>
+</div>
+
+<!--底部版权区-->
+<div id="footer"></div>
+
+<script type="text/javascript">
+    $(function() {
+        var map = [{"text":"前端","val":"1"},{"text":"云计算/大数据","val":"2"},{"text":"服务器","val":"3"},{"text":"移动开发","val":"4"}];
+        $(".showYear").data("init",JSON.stringify(map));
+        $(".showYear").mySelect({
+            showCancel:true,
+            showSearch:true,
+            multiple:true
+        });
+
+        $(".showCity").mySelect({
+            showCancel:false,
+            showSearch:true,
+            multiple:false
+        });
+
+        console.log(JSON.stringify(map));
+    });
+</script>
+<script type="text/javascript">
+    var named;
+    function delete1(id)
+    {
+        localStorage.removeItem(id);
+        this.Storage.writeData();
+    }
+    function prom() {
+
+        var name = prompt("请输入您的名字", "");//将输入的内容赋给变量 name ，
+        named = name;
+        //这里需要注意的是，prompt有两个参数，前面是提示的话，后面是当对话框出来后，在对话框里的默认值
+
+        if (named)//如果返回的有内容
+
+        {
+
+            alert("欢迎您：" + name)
+            document.getElementById("shangtian").style.display = "none";
+            document.getElementById("ritian").value = named;
+
+        }
+        else {
+            document.getElementById("ritian").value = "匿名发言者";
+        }
+
+    }
+    var Storage =
+        {
+            saveData:function()//保存数据
+            {
+
+                var data = document.querySelector("#post textarea");
+                if(data.value != "")
+                {
+                    var time = new Date().getTime() + Math.random() * 5;//getTime是Date对象中的方法，作用是返回 1970年01月01日至今的毫秒数
+                    if (named) {
+                        localStorage.setItem(time, data.value + "|" + named + "|" + this.getDateTime());//将毫秒数存入Key值中，可以降低Key值重复率
+                    }
+                    else
+                    {
+                        localStorage.setItem(time, data.value + "|" + "匿名发言者" + "|" + this.getDateTime());//将毫秒数存入Key值中，可以降低Key值重复率
+                    }
+
+                    data.value = "";
+                    this.writeData();
+                }
+                else
+                {
+                    alert("请填写您的留言！");
+                }
+            },
+            writeData:function()//输出数据
+            {
+                var dataHtml = "", data = "";
+                for(var i = localStorage.length-1; i >= 0; i--)//效率更高的循环方法
+                {
+                    data = localStorage.getItem(localStorage.key(i)).split("|");
+
+                    //dataHtml += "<p><span class=\"msg\">" + data[0] + "</span><span class=\"datetime\">" + data[1] + "</span><span>" + data[2]+"</span></p>";
+                    dataHtml += "<span style=>" + data[1] + "<span style=\"float:right\">" + data[2] + "</span><p><span class=\"msg\">" + data[0] + "<input style=\"float:right;border:none;border-radius:5px;\" id=\"clearBt\" type=\"button\" onclick=\"delete1(" + localStorage.key(i) + ");\" value=\"删除\">" + "</span></p>";
+                }
+                document.getElementById("comment").innerHTML = dataHtml;
+            },
+            clearData:function()//清空数据
+            {
+                if(localStorage.length > 0)
+                {
+                    if(window.confirm("清空后不可恢复，是否确认清空？"))
+                    {
+                        localStorage.clear();
+                        this.writeData();
+                    }
+                }
+                else
+                {
+                    alert("没有需要清空的数据！");
+                }
+            },
+            getDateTime:function()//获取日期时间，例如 2012-03-08 12:58:58
+            {
+                var isZero = function(num)//私有方法，自动补零
+                {
+                    if(num < 10)
+                    {
+                        num = "0" + num;
+                    }
+                    return num;
+                }
+
+                var d = new Date();
+                return d.getFullYear() + "-" + isZero(d.getMonth() + 1) + "-" + isZero(d.getDate()) + " " + isZero(d.getHours()) + ":" + isZero(d.getMinutes()) + ":" + isZero(d.getSeconds());
+            }
+        }
+    window.onload = function()
+    {
+        Storage.writeData();//当打开页面的时候，先将localStorage中的数据输出一边，如果没有数据，则输出空
+        document.getElementById("postBt").onclick = function(){Storage.saveData();}//发表评论按钮添加点击事件，作用是将localStorage中的数据输出
+        document.getElementById("clearBt").onclick = function(){Storage.clearData();}//清空所有已保存的数据
+    }
+
+
+
+
+
+</script>
+</body>
+</html>
